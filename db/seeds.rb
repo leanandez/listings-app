@@ -7,3 +7,17 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+listings = [
+  { address: '9209 Independence Loop, McKinney, TX 75069', description: '3 BDS  |  3.5 BA  |  1,950 sqft', img: 'property1.png' },
+  { address: '9209 Independence Loop, McKinney, TX 75069', description: '3 BDS  |  3.5 BA  |  1,950 sqft', img: 'property1.png' },
+  { address: '9209 Independence Loop, McKinney, TX 75069', description: '3 BDS  |  3.5 BA  |  1,950 sqft', img: 'property2.png' },
+  
+]
+
+listings.each do |listing|
+  Listing.find_or_create_by!(address: listing[:address]) do |l|
+    l.description = listing[:description]
+    l.img = listing[:img]
+  end
+end
