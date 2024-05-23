@@ -10,8 +10,8 @@
 
 listings = [
   { address: '9209 Independence Loop, McKinney, TX 75069', description: '3 BDS  |  3.5 BA  |  1,950 sqft', img: 'property1.png' },
-  { address: '9209 Independence Loop, McKinney, TX 75069', description: '3 BDS  |  3.5 BA  |  1,950 sqft', img: 'property1.png' },
-  { address: '9209 Independence Loop, McKinney, TX 75069', description: '3 BDS  |  3.5 BA  |  1,950 sqft', img: 'property2.png' },
+  { address: '9409 Independence Loop, McKinney, TX 75069', description: '3 BDS  |  3.5 BA  |  1,950 sqft', img: 'property1.png' },
+  { address: '9509 Independence Loop, McKinney, TX 75069', description: '3 BDS  |  3.5 BA  |  1,950 sqft', img: 'property2.png' },
   
 ]
 
