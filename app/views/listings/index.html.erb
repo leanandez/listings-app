@@ -1,0 +1,97 @@
+
+<section class="container" style="margin-bottom:6rem" data-controller="mainPage">
+
+    <article>
+        <div >
+            <div class="flex flex-col md:flex-row justify-between pr-10">
+                <div class="text-cityTitle">
+                    <h3 class="pb-2">Your resource for homes and real estate in</h3>
+                    <h1 class="text-4xl sm:text-6xl font-bold ">Atlanta, GA</h1>
+                </div>
+                
+                <p class="w-full  md:w-7/12 text-sm mt-4" data-mainPage-target="detailText">The heart of downtown is swimming with exciting nightlife, world-famous attractions, and historic landmarks; the surrounding neighborhoods offer unique, local businesses that reflect the individual character of each area. In the midst of all the urban city activities, Atlanta real estate is also surrounded by a variety of parks, gardens, and green spaces. When it comes to Georgia Real Estate in an active city, it doesn’t get more vibrant than Atlanta.</p>
+
+                <button data-mainPage-target="readMoreBtn" data-action="click->mainPage#handleText" class="flex md:hidden text-customGreen font-bold">Read more</button>
+                
+            </div>
+
+            <div class="flex justify-between mt-8">
+                <div class="flex items-center px-2 rounded bg-customBlue text-white">6,799 <span class="hidden lg:flex"> Available </span> Listings</div>
+                <div class="flex">
+                    <button class=" hidden md:flex bg-customGreen text-white rounded py-2 px-4 font-bold">SAVE SEARCH</button>
+                    <button class="hidden md:flex rounded text-customGreen border-customGreen border-2 py-2 px-4 mx-2 font-bold">SHARE</button>
+                    <select class=" border-cardBorder mr-4">    
+                        <option selected> Newest Listings</option>
+                    </select>
+                </div> 
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <% @listings.each do |listing| %>
+                <div class="border-b-4 border-cardBorder mb-4 mt-4 pb-4 w-fit relative ">
+                    <%= image_tag "like-btn.png", class:'absolute right-2 top-2' %>
+                    <% if listing.img.present? && asset_exists?(listing.img) %>
+                        <%= image_tag(listing.img, alt: listing.description, class:"rounded")  %>
+                    <% else %>
+                        <%= image_tag("img-not.png", alt: "Fallback image", class: "rounded") %>
+                    <% end %>
+                    <h2 class="pt-2 text-sm font-bold"><%= listing.description %></h2>
+                    <h6 class="pt-2 text-xs"><%= listing.address %></h6>
+                </div>
+            <%end%>
+        </div>
+   </article>
+
+   <article class=" mb-8"> 
+        <div class="flex justify-center py-8 font-bold border-b-4 border-cardBorder">
+            <%= link_to "1", "#", class:"px-2" %>
+            <%= link_to "2", "#", class:"px-2" %>
+            <%= link_to "3", "#", class:"px-2" %>
+            <%= link_to "NEXT", "#", class:"px-2" %>
+        </div>
+
+        <div class="flex justify-center pt-8">
+            <%= link_to "For Sale", "#", class:"px-2" %>
+            <p>></p>
+            <%= link_to "Georgia", "#", class:"px-2" %>
+            <p>></p>
+            <%= link_to "Atlanta", "#", class:"px-2" %>
+              
+        </div>
+
+   </article>
+
+    <article class="flex flex-col md:flex-row justify-between  bg-customBlue text-white" style="padding:4rem 2rem">   
+        <div>
+            <h2 class="text-white text-lg font-bold mb-4">Nearby Real State</h2>
+            <p class="mb-2">Open House Near Me</p>
+            <p class="mb-2">Land for Sale Near Me</p>
+            <p class="mb-2">Townhome for Sale Near Me</p>
+            <p class="mb-2">See All</p>
+        </div>
+        <div>
+            <h2 class="text-white text-lg font-bold mb-4">Nearby Zip Codes</h2>
+            <p class="mb-2">31198</p>
+            <p class="mb-2">30314</p>
+            <p class="mb-2">31191</p>
+            <p class="mb-2">See All</p>
+        </div>
+        <div>
+            <h2 class="text-white text-lg font-bold mb-4">Atlanta Neighborhoods</h2>
+            <p class="mb-2">Bankhead</p>
+            <p class="mb-2">Vine City</p>
+            <p class="mb-2">Atlanta University Center</p>
+            <p class="mb-2">See All</p>
+        </div>
+        <div>
+            <h2 class="text-white text-lg font-bold mb-4">Atlanta Property Types</h2>
+            <p class="mb-2">For Sale by Owner (FSBO)</p>
+            <p class="mb-2">Single Family Homes</p>
+            <p class="mb-2">Condos</p>
+            <p class="mb-2">See All</p>
+        </div>
+    </article>
+
+    
+</section>

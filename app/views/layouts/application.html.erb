@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+
+
+  </head>
+
+  <body>
+    <%= image_tag 'bkg-img.png', class:"absolute top-0 right-0 ", style:"z-index:-1"  %>
+    <%= render 'shared/navbar' %>
+    <main class="container mx-auto mt-4 px-5 flex">
+      <%= yield %>
+    </main>
+    <%= render 'shared/footer' %>
+
+  </body>
+</html>
